@@ -1,6 +1,7 @@
 package rs.aleph.android.example19.activities;
 
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.NotificationCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -78,6 +80,9 @@ public class FirstActivity extends AppCompatActivity implements MasterFragment.O
 		setSupportActionBar(toolbar);
 		final android.support.v7.app.ActionBar actionBar = getSupportActionBar();
 
+
+
+
 		if (actionBar != null) {
 			actionBar.setDisplayHomeAsUpEnabled(true);
 			actionBar.setHomeAsUpIndicator(R.drawable.ic_drawer);
@@ -85,6 +90,10 @@ public class FirstActivity extends AppCompatActivity implements MasterFragment.O
 			actionBar.show();
 		}
 
+
+		Context context = getApplicationContext();
+		NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
+		builder.setLights(1,1000,1000);
 
 
 		// Manages NavigationDrawer

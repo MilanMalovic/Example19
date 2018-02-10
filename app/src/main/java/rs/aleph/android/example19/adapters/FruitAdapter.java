@@ -1,6 +1,5 @@
 package rs.aleph.android.example19.adapters;
 
-import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +10,6 @@ import java.util.List;
 
 import rs.aleph.android.example19.R;
 import rs.aleph.android.example19.fragments.MasterFragment;
-import rs.aleph.android.example19.model.Fruit;
 
 /**
  * Created by lazar on 8.2.18..

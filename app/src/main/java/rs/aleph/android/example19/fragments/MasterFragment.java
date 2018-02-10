@@ -8,16 +8,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.List;
 
 import rs.aleph.android.example19.R;
 import rs.aleph.android.example19.adapters.FruitAdapter;
-import rs.aleph.android.example19.providers.FruitProvider;
+import rs.aleph.android.example19.model.Glumac;
+import rs.aleph.android.example19.providers.GlumacProvider;
 
 // Each Fragment extends Fragment class
 public class MasterFragment extends Fragment {
@@ -34,10 +31,10 @@ public class MasterFragment extends Fragment {
         //Toast.makeText(getActivity(), "MasterFragment.onActivityCreated()", Toast.LENGTH_SHORT).show();
 
         // Loads fruits from array resource
-        final List<String> fruitNames = FruitProvider.getFruitNames();
+        final List<String> glumacNames = GlumacProvider.getGlumacNames();
 
         // Creates an Adapter for fruits
-        FruitAdapter dataAdapter = new FruitAdapter((OnItemSelectedListener) getActivity(), fruitNames);
+        FruitAdapter dataAdapter = new FruitAdapter((OnItemSelectedListener) getActivity(), glumacNames);
         RecyclerView listView = (RecyclerView) getActivity().findViewById(R.id.listofFruits);
         // Set layout manager
         listView.setLayoutManager(new LinearLayoutManager(getActivity()));

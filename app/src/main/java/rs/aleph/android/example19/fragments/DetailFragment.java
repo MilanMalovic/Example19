@@ -14,12 +14,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,7 +25,7 @@ import java.util.List;
 
 import rs.aleph.android.example19.R;
 import rs.aleph.android.example19.providers.CategoryProvider;
-import rs.aleph.android.example19.providers.FruitProvider;
+import rs.aleph.android.example19.providers.GlumacProvider;
 
 // Each fragment extends Fragment class
 public class DetailFragment extends Fragment {
@@ -55,7 +53,7 @@ public class DetailFragment extends Fragment {
         ImageView ivImage = (ImageView) getView().findViewById(R.id.iv_image);
         InputStream is = null;
         try {
-            is = getActivity().getAssets().open(FruitProvider.getFruitById(position).getImage());
+            is = getActivity().getAssets().open(GlumacProvider.getGlumacById(position).getImage());
             Drawable drawable = Drawable.createFromStream(is, null);
             ivImage.setImageDrawable(drawable);
         } catch (IOException e) {
@@ -64,22 +62,22 @@ public class DetailFragment extends Fragment {
 
         // Finds "tvName" TextView and sets "text" property
         TextView tvName = (TextView) getView().findViewById(R.id.tv_name);
-        tvName.setText(FruitProvider.getFruitById(position).getName());
+        tvName.setText(GlumacProvider.getGlumacById(position).getIme());
 
         // Finds "tvDescription" TextView and sets "text" property
         TextView tvDescription = (TextView) getView().findViewById(R.id.tv_description);
-        tvDescription.setText(FruitProvider.getFruitById(position).getDescription());
+        tvDescription.setText(GlumacProvider.getGlumacById(position).getBiografija());
 
         // Finds "spCategory" Spiner and sets "selection" property
         Spinner category = (Spinner) getView().findViewById(R.id.sp_category);
         List<String> categories = CategoryProvider.getCategoryNames();
         ArrayAdapter<String> adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, categories);
         category.setAdapter(adapter);
-        category.setSelection((int)FruitProvider.getFruitById(position).getCategory().getId());
+        category.setSelection((int)GlumacProvider.getGlumacById(position).getCategory().getId());
 
         // Finds "rbRating" RatingBar and sets "rating" property
         RatingBar rbRating = (RatingBar) getView().findViewById(R.id.rb_rating);
-        rbRating.setRating(FruitProvider.getFruitById(position).getRating());
+        rbRating.setRating(GlumacProvider.getGlumacById(position).getOcena());
 
         // Finds "btnBuy" Button and sets "onClickListener" listener
         FloatingActionButton btnBuy = (FloatingActionButton) getView().findViewById(R.id.btn_buy);
@@ -136,7 +134,7 @@ public class DetailFragment extends Fragment {
         ImageView ivImage = (ImageView) getView().findViewById(R.id.iv_image);
         InputStream is = null;
         try {
-            is = getActivity().getAssets().open(FruitProvider.getFruitById(position).getImage());
+            is = getActivity().getAssets().open(GlumacProvider.getGlumacById(position).getImage());
             Drawable drawable = Drawable.createFromStream(is, null);
             ivImage.setImageDrawable(drawable);
         } catch (IOException e) {
@@ -145,22 +143,22 @@ public class DetailFragment extends Fragment {
 
         // Finds "tvName" TextView and sets "text" property
         TextView tvName = (TextView) getView().findViewById(R.id.tv_name);
-        tvName.setText(FruitProvider.getFruitById(position).getName());
+        tvName.setText(GlumacProvider.getGlumacById(position).getPrezime());
 
         // Finds "tvDescription" TextView and sets "text" property
         TextView tvDescription = (TextView) getView().findViewById(R.id.tv_description);
-        tvDescription.setText(FruitProvider.getFruitById(position).getDescription());
+        tvDescription.setText(GlumacProvider.getGlumacById(position).getBiografija());
 
         // Finds "spCategory" Spiner and sets "selection" property
         Spinner category = (Spinner) getView().findViewById(R.id.sp_category);
         List<String> categories = CategoryProvider.getCategoryNames();
         ArrayAdapter<String> adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, categories);
         category.setAdapter(adapter);
-        category.setSelection((int)FruitProvider.getFruitById(position).getCategory().getId());
+        category.setSelection((int)GlumacProvider.getGlumacById(position).getCategory().getId());
 
         // Finds "rbRating" RatingBar and sets "rating" property
         RatingBar rbRating = (RatingBar) getView().findViewById(R.id.rb_rating);
-        rbRating.setRating(FruitProvider.getFruitById(position).getRating());
+        rbRating.setRating(GlumacProvider.getGlumacById(position).getOcena());
 
         // Finds "btnBuy" Button and sets "onClickListener" listener
         FloatingActionButton btnBuy = (FloatingActionButton) getView().findViewById(R.id.btn_buy);

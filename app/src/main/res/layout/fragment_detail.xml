@@ -53,6 +53,8 @@
             android:gravity="center_vertical"
             android:textColor="#000000"/>
 
+
+
         <!-- Spinners provide a quick way to select one value from a set. -->
         <Spinner
             android:id="@+id/sp_category"

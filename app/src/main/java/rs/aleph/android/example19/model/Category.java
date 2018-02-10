@@ -7,11 +7,11 @@ public class Category {
 
     private int id;
     private String name;
-    private List<Fruit> fruits;
+    private List<Glumac> glumci;
 
     public Category() {
 
-        fruits = new ArrayList<>();
+        glumci = new ArrayList<>();
     }
 
     public Category(int id, String name) {
@@ -19,7 +19,7 @@ public class Category {
         this.id = id;
         this.name = name;
 
-        fruits = new ArrayList<>();
+        glumci = new ArrayList<>();
     }
 
     public int getId() {
@@ -42,28 +42,28 @@ public class Category {
         this.name = name;
     }
 
-    public void addFruit(Fruit fruit) {
+    public void addGlumac(Glumac glumac) {
 
-        fruits.add(fruit);
+        glumci.add(glumac);
     }
 
-    public void removeFruit(Fruit fruit) {
+    public void removeGlumac(Glumac glumac) {
 
-        fruits.remove(fruit);
+        glumci.remove(glumac);
     }
 
-    public Fruit getFruit(int position) {
+    public Glumac getGlumac(int position) {
 
-        return fruits.get(position);
+        return glumci.get(position);
     }
 
-    public List<Fruit> getFruits() {
+    public List<Glumac> getGlumci() {
 
-        return fruits;
+        return glumci;
     }
 
-    public void setFruits(List<Fruit> fruits) {
+    public void setGlumci(List<Glumac> glumci) {
 
-        this.fruits = fruits;
+        this.glumci = glumci;
     }
 }
